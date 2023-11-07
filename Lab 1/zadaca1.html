@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadaca 1</title>
+</head>
+<body>
+<h1>Преостанато време</h1> 
+<p id="vreme"></p>
+
+
+<script>
+
+function vreme() {
+    const momentalnoVreme = new Date();
+    const krajnoVreme = new Date(momentalnoVreme);
+    krajnoVreme.setHours(24, 0, 0, 0);
+    const preostanatoVreme = krajnoVreme - momentalnoVreme;
+    const casovi = Math.floor(preostanatoVreme / 3600000);
+    const minuti = Math.floor((preostanatoVreme % 3600000) / 60000);
+    const sekundi = Math.floor((preostanatoVreme % 60000) / 1000);
+    let p = document.getElementById('vreme');
+    p.innerHTML = casovi.toString() + `:` + minuti.toString() + `:`  + sekundi.toString();
+}
+setInterval(vreme, 1000);
+
+</script>
+</body>
+</html>

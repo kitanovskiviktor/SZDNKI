@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadaca 1</title>
+</head>
+<body>
+
+<h1>Форма за пријавување на X-Factor</h1>
+
+<form>
+    <label>Име <input id="ime"/></label>
+    <br/>
+    <label>Уметничко име <input id="um_ime"/></label>
+    <br/>
+    <label>Пол</label>
+    <input type="radio" name="pol" id="maski" value="Машки"/>
+    <label>Машки</label>
+    <input type="radio" name="pol" id="zenski" value="Женски"/>
+    <label>Женски</label>
+    <br/>
+    <label>Жанр</label>
+    <select id="music">
+        <option>Classical Music</option>
+        <option>Rock Music</option>
+        <option>Pop Music</option>
+    </select>
+    <br/>
+    <button onclick="prijavi()" type="button">Пријави се</button>
+</form>
+<p id="poraka"></p>
+<script>
+
+function prijavi() {
+
+    const ime = document.getElementById('ime').value;
+    const umIme = document.getElementById('um_ime').value;
+    let music = document.getElementById('music').value;
+    let pol = ``;
+    if(ime === "" || umIme === "") {
+        document.getElementById('poraka').innerHTML = 'Сите полиња се задолжителни'
+        return null;
+    }
+    document.getElementById('poraka').innerHTML = ``;
+
+    let radio = document.querySelectorAll('input[name="pol"]');
+
+    for(const kopce of radio) {
+       if(kopce.checked) {
+        pol = kopce.value;
+       }
+    }
+
+    if(pol !== "Машки" && pol !== "Женски") {
+        document.getElementById('poraka').innerHTML = `Изберете пол`;
+        return null;
+    }
+    document.getElementById('poraka').innerHTML = ``;
+    alert(ime + ` `+ umIme + ` ` + pol + ` ` + music + ` успешно се пријавивте`);
+}
+
+
+</script>
+</body>
+</html>

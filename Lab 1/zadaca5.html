@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+       
+        </style>
+</head>
+
+
+<h2>Големина на фонт</h2>
+<button id="pocetna">Почетна</button>
+<button id="zgolemi">Зголеми</button>
+<button id="namali">намали</button>
+
+<h1>How to connect to the internet</h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid vel ullam consectetur aut aspernatur deleniti soluta aperiam fugiat aliquam tenetur.</p>
+
+<body>
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#pocetna').click(function() {
+                $('h1').animate({
+                    fontSize: '32px'
+                })
+                $('p').animate({
+                    fontSize: '16px'
+                })
+            })
+
+            $('#zgolemi').click(function() {
+                $('h1').animate({
+                    fontSize: '+=4px'
+                })
+                $('p').animate({
+                    fontSize: '+=2px'
+                })
+            })
+
+            $('#namali').click(function() {
+                $('h1').animate({
+                    fontSize: '-=4px'
+                })
+                $('p').animate({
+                    fontSize: '-=2px'
+                })
+            })
+        })
+       
+    </script>
+</body>
+</html>
